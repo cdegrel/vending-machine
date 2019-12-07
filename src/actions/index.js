@@ -1,6 +1,6 @@
 import {
     BUY_PRODUCT,
-    BUY_PRODUCT_FAILURE,
+    BUY_PRODUCT_FAILURE, DECREMENT_BALANCE,
     FETCH_COINS,
     FETCH_PRODUCTS,
     INCREMENT_BALANCE,
@@ -33,5 +33,10 @@ export const fetchCoins = () => ({
 // Balance
 export const incrementBalance = value => ({
     type: INCREMENT_BALANCE,
+    value
+})
+
+export const decrementBalance = value => ({
+    type: DECREMENT_BALANCE,
     value
 })
