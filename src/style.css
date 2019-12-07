@@ -58,6 +58,15 @@ h1 {
     cursor: default;
 }
 
+.balance {
+    height: 20px;
+    background: #282828;
+    color: #fff;
+    line-height: 20px;
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
 .coin-selector {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
