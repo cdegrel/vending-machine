@@ -25,8 +25,11 @@ h1 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+.vending-machine {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .product-list {
@@ -103,4 +106,9 @@ h1 {
     color: #fff;
     line-height: 20px;
     padding: 1rem;
+}
+
+.product-purchased-list__list {
+    display: flex;
+    flex-wrap: wrap;
 }

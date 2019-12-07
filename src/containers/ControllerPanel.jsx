@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import Balance from './Balance'
 import CoinSelector from './CoinSelector'
@@ -8,27 +7,24 @@ import { connect } from 'react-redux'
 import { buyProduct } from '../actions'
 import PurchaseStatus from '../components/PurchaseStatus'
 
-const ControllerPanel = ({ status, handleBuyProduct }) => {
+const ControllerPanel = ({ selectedIndex, status, handleBuyProduct }) => {
     return (
         <div className="controller-panel">
             <Balance />
             <CoinSelector />
-            <DispenseButton onDispense={handleBuyProduct} />
+            <DispenseButton onDispense={() => handleBuyProduct(selectedIndex)} />
             <PurchaseStatus status={status} />
         </div>
     )
 }
 
-ControllerPanel.propTypes = {
-    handleBuyProduct: PropTypes.func.isRequired
-}
-
 const mapStateToProps = state => ({
+    selectedIndex: state.productReducer.selectedIndex,
     status: state.productPurchasedReducer.status
 })
 
 const mapDispatchToProps = dispatch => ({
-    handleBuyProduct: () => dispatch(buyProduct())
+    handleBuyProduct: selectedIndex => dispatch(buyProduct(selectedIndex))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ControllerPanel)

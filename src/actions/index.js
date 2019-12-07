@@ -34,8 +34,9 @@ export const decrementBalance = value => ({
 })
 
 // Purchase product
-export const buyProduct = () => ({
-    type: BUY_PRODUCT
+export const buyProduct = selectedIndex => ({
+    type: BUY_PRODUCT,
+    selectedIndex
 })
 export const buyProductFailure = status => ({
     type: BUY_PRODUCT_FAILURE,
