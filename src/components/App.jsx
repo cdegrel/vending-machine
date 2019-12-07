@@ -1,5 +1,8 @@
 import React from 'react'
+
 import ProductList from '../containers/ProductList'
+import Balance from '../containers/Balance'
+import CoinSelector from '../containers/CoinSelector'
 
 const App = () => {
     return (
@@ -9,6 +12,10 @@ const App = () => {
             </header>
             <main className="app__main">
                 <ProductList />
+                <div>
+                    <Balance />
+                    <CoinSelector />
+                </div>
             </main>
         </div>
     )

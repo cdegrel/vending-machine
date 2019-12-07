@@ -13,17 +13,19 @@ h1 {
     padding: 10px 0;
     color: #fff;
 }
-
 .app__main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .product-list {
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
+    flex: 1;
 }
 
 .product-list-item {
@@ -54,4 +56,31 @@ h1 {
 .product-list-item__select:disabled {
     background: #c4c4c4;
     cursor: default;
+}
+
+.balance {
+    height: 20px;
+    background: #282828;
+    color: #fff;
+    line-height: 20px;
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.coin-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    background: #fff;
+    padding: 1rem;
+}
+.coin-selector-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #293e50;
+    color: #fff;
+    margin: 5px;
+    cursor: pointer;
 }

@@ -5,11 +5,12 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 import App from './components/App'
-import { fetchProducts } from './actions'
+import { fetchCoins, fetchProducts } from './actions'
 
 import './style.css'
 
 store.dispatch(fetchProducts())
+store.dispatch(fetchCoins())
 
 render(
     <Provider store={store}>
