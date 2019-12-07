@@ -10,7 +10,7 @@ const ProductListItem = ({ product, selectedIndex, onSelectProduct }) => {
                 <div>Price: <strong>£{product.price.toFixed(2)}</strong></div>
                 <div>Stock: <strong>{product.stock}</strong></div>
             </div>
-            <button disabled={product.stock <= 0} onClick={() => onSelectProduct(product.id)} className="btn product-list-item__select">Select</button>
+            <button disabled={product.stock <= 0} onClick={() => onSelectProduct(product.id)} className="btn btn-full product-list-item__select">Select</button>
         </div>
     )
 }

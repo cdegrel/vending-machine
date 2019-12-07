@@ -6,21 +6,35 @@ body {
 h1 {
     margin: 0;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .btn {
     border: none;
     padding: 5px 0;
     color: #fff;
     cursor: pointer;
+}
+.btn-full {
     width: 100%;
 }
 
 .header {
     background: #293e50;
-    text-align: center;
-    padding: 10px 0;
+    padding: 1.5rem;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.machine {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .app__main {
     max-width: 1200px;
     margin: 0 auto;
