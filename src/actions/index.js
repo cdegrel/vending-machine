@@ -1,4 +1,11 @@
-import { FETCH_COINS, FETCH_PRODUCTS, INCREMENT_BALANCE, SELECT_PRODUCT } from '../constants/action-types'
+import {
+    BUY_PRODUCT,
+    BUY_PRODUCT_FAILURE, DECREMENT_BALANCE,
+    FETCH_COINS,
+    FETCH_PRODUCTS,
+    INCREMENT_BALANCE,
+    SELECT_PRODUCT
+} from '../constants/action-types'
 
 // Product
 export const fetchProducts = () => ({
@@ -19,4 +26,19 @@ export const fetchCoins = () => ({
 export const incrementBalance = value => ({
     type: INCREMENT_BALANCE,
     value
+})
+
+export const decrementBalance = value => ({
+    type: DECREMENT_BALANCE,
+    value
+})
+
+// Purchase product
+export const buyProduct = selectedIndex => ({
+    type: BUY_PRODUCT,
+    selectedIndex
+})
+export const buyProductFailure = status => ({
+    type: BUY_PRODUCT_FAILURE,
+    status
 })
