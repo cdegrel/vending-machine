@@ -7,6 +7,14 @@ h1 {
     margin: 0;
 }
 
+.btn {
+    border: none;
+    padding: 5px 0;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
 .app__header {
     background: #293e50;
     text-align: center;
@@ -39,6 +47,9 @@ h1 {
     justify-content: space-between;
     align-items: center;
 }
+.product-list-item.selected {
+    border: 3px solid #6a551f;
+}
 .product-list-item__info {
     display: flex;
     flex-wrap: wrap;
@@ -46,12 +57,7 @@ h1 {
     width: 100%;
 }
 .product-list-item__select {
-    width: 100%;
     background: #293e50;
-    border: none;
-    padding: 5px 0;
-    color: #fff;
-    cursor: pointer;
 }
 .product-list-item__select:disabled {
     background: #c4c4c4;
@@ -73,6 +79,7 @@ h1 {
     grid-gap: 10px;
     background: #fff;
     padding: 1rem;
+    margin-bottom: 20px;
 }
 .coin-selector-button {
     width: 40px;
@@ -83,4 +90,8 @@ h1 {
     color: #fff;
     margin: 5px;
     cursor: pointer;
+}
+
+.dispense-button {
+    background: #6a551f;
 }
