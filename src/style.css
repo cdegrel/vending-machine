@@ -16,9 +16,15 @@ a {
     padding: 5px 0;
     color: #fff;
     cursor: pointer;
+    background: #293e50;
 }
 .btn-full {
     width: 100%;
+}
+.form__field {
+    border-radius: 0;
+    border-style: solid;
+    padding: 10px 5px;
 }
 
 .header {
@@ -26,6 +32,7 @@ a {
     padding: 1.5rem;
     color: #fff;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -72,9 +79,6 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-}
-.product-list-item__select {
-    background: #293e50;
 }
 .product-list-item__select:disabled {
     background: #c4c4c4;
