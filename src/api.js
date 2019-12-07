@@ -36,3 +36,46 @@ export const PRODUCTS = [
         price: 1.6
     },
 ]
+
+export const COINS = [
+    {
+        id: 1,
+        label: "1p",
+        value: 0.01
+    },
+    {
+        id: 2,
+        label: "2p",
+        value: 0.02
+    },
+    {
+        id: 3,
+        label: "5p",
+        value: 0.05
+    },
+    {
+        id: 4,
+        label: "10p",
+        value: 0.1
+    },
+    {
+        id: 5,
+        label: "20p",
+        value: 0.2
+    },
+    {
+        id: 6,
+        label: "50p",
+        value: 0.5
+    },
+    {
+        id: 7,
+        label: "£1",
+        value: 1
+    },
+    {
+        id: 8,
+        label: "£2",
+        value: 2
+    }
+]
