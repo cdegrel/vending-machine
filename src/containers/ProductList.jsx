@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import ProductListItem from '../components/ProductListItem'
+
 const ProductList = ({ products }) => {
-    console.log(products)
     return (
         <div className="product-list">
-            product-list
+            {products.map(product => (
+                <ProductListItem key={product.id} product={product} />
+            ))}
         </div>
     )
 }
