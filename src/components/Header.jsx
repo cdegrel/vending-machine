@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => (
     <header className="header">
-        <h1>Vending Machine</h1>
+        <Link to="/">
+            <h1>Vending Machine</h1>
+        </Link>
+        <Link className="btn" to="/admin">Admin</Link>
     </header>
 )
 
