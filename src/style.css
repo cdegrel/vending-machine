@@ -94,4 +94,13 @@ h1 {
 
 .dispense-button {
     background: #6a551f;
+    margin-bottom: 20px;
+}
+
+.purchase-status {
+    height: 20px;
+    background: #282828;
+    color: #fff;
+    line-height: 20px;
+    padding: 1rem;
 }

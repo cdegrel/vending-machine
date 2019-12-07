@@ -17,14 +17,6 @@ export const selectProduct = id => ({
     id
 })
 
-export const buyProduct = () => ({
-    type: BUY_PRODUCT
-})
-export const buyProductFailure = error => ({
-    type: BUY_PRODUCT_FAILURE,
-    error
-})
-
 // Coin
 export const fetchCoins = () => ({
     type: FETCH_COINS
@@ -39,4 +31,13 @@ export const incrementBalance = value => ({
 export const decrementBalance = value => ({
     type: DECREMENT_BALANCE,
     value
+})
+
+// Purchase product
+export const buyProduct = () => ({
+    type: BUY_PRODUCT
+})
+export const buyProductFailure = status => ({
+    type: BUY_PRODUCT_FAILURE,
+    status
 })

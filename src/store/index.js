@@ -15,7 +15,7 @@ const buyMiddleware = store => next => action => {
         const { price } = products.find(product => product.id === selectedIndex)
         const value = store.getState().balanceReducer.value
         if (value <= 0 || price > value) {
-            return store.dispatch(buyProductFailure('Insufficient funds have been inserted'))
+            return store.dispatch(buyProductFailure('Insufficient funds!'))
         }
 
         store.dispatch(decrementBalance(value - (value - price)))
