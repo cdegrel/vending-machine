@@ -13,17 +13,19 @@ h1 {
     padding: 10px 0;
     color: #fff;
 }
-
 .app__main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .product-list {
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
+    flex: 1;
 }
 
 .product-list-item {
@@ -59,7 +61,7 @@ h1 {
 .coin-selector {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
+    grid-gap: 10px;
     background: #fff;
     padding: 1rem;
 }
