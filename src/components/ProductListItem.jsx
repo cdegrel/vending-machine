@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ProductListItem = ({ product }) => {
     return (
@@ -8,9 +9,18 @@ const ProductListItem = ({ product }) => {
                 <div>Price: <strong>£{product.price.toFixed(2)}</strong></div>
                 <div>Stock: <strong>{product.stock}</strong></div>
             </div>
-            <button className="product-list-item__select">Select</button>
+            <button disabled={product.stock <= 0} className="product-list-item__select">Select</button>
         </div>
     )
+}
+
+ProductListItem.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        stock: PropTypes.number.isRequired,
+    })
 }
 
 export default ProductListItem

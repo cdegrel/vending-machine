@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import CoinSelectorButton from '../components/CoinSelectorButton'
@@ -12,6 +13,11 @@ const CoinSelector = ({ coins, handleIncrementBalance }) => {
             ))}
         </div>
     )
+}
+
+CoinSelector.propTypes = {
+    coins: PropTypes.arrayOf(PropTypes.object).isRequired,
+    handleIncrementBalance: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

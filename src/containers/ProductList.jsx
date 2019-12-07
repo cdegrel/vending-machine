@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import ProductListItem from '../components/ProductListItem'
@@ -11,6 +12,10 @@ const ProductList = ({ products }) => {
             ))}
         </div>
     )
+}
+
+ProductList.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 const mapStateToProps = state => ({
