@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const Balance = ({ value }) => (
     <div className="balance">
-        £ {value.toFixed(2)}
+        {value <= 0 ? 'Insert Coin...' : '£'+value.toFixed(2)}
     </div>
 )
 
