@@ -1,4 +1,10 @@
-import { BUY_PRODUCT, BUY_PRODUCT_FAILURE, FETCH_PRODUCTS, SELECT_PRODUCT } from '../constants/action-types'
+import {
+    BUY_PRODUCT,
+    BUY_PRODUCT_FAILURE,
+    FETCH_PRODUCTS,
+    RELOAD_PRODUCT_STOCK,
+    SELECT_PRODUCT
+} from '../constants/action-types'
 import { PRODUCTS } from '../api'
 
 const initialState = {
@@ -13,6 +19,13 @@ export default (state = initialState, action) => {
             return { ...state, products: PRODUCTS }
         case SELECT_PRODUCT:
             return { ...state, selectedIndex: action.id }
+        case RELOAD_PRODUCT_STOCK:
+            return { ...state, products: state.products.map(product =>
+                    product.id === action.id
+                        ? { ...product, stock: product.stock + action.stock }
+                        : product
+                )
+            }
         case BUY_PRODUCT:
             return { ...state, products: state.products.map(product =>
                     product.id === state.selectedIndex
