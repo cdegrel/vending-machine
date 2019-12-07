@@ -42,8 +42,8 @@ h1 {
 .product-list-item {
     background: #fff;
     padding: 1rem;
-    min-width: 180px;
     height: 180px;
+    min-width: 180px;
     margin: 10px;
     display: flex;
     flex-direction: column;

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const ProductListItem = ({ product, selectedIndex, onSelectProduct }) => {
+    console.log(product.image)
     return (
         <div className={`product-list-item ${product.id === selectedIndex ? 'selected' : ''}`}>
             <h4>{product.name}</h4>

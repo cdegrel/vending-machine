@@ -8,7 +8,6 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case BUY_PRODUCT:
-            console.log(action)
             return { ...state, products: [action.selectedIndex, ...state.products], status: 'Enjoy!!!' }
         case BUY_PRODUCT_FAILURE:
             return { ...state, status: action.status }

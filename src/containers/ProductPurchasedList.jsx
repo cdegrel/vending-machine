@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import ProductPurchasedListItem from '../components/ProductPurchasedListItem'
 
 const ProductPurchasedList = ({ products }) => {
-    console.log(products)
     return (
         <div className="product-purchased-list">
             <header>
@@ -12,8 +11,8 @@ const ProductPurchasedList = ({ products }) => {
                 <hr />
             </header>
             <div className="product-purchased-list__list">
-                {products.map(product => (
-                    <ProductPurchasedListItem key={product.id} product={product} onSelectProduct={null} />
+                {products.map((product, index) => (
+                    <ProductPurchasedListItem key={index} product={product} onSelectProduct={null} />
                 ))}
             </div>
         </div>
