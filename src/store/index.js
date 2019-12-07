@@ -1,11 +1,30 @@
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import reducers from '../reducers'
+import { BUY_PRODUCT } from '../constants/action-types'
+import { buyProductFailure } from '../actions'
 
 const initialState = {}
 
+const buyMiddleware = store => next => action => {
+    if (action.type === BUY_PRODUCT) {
+        const { products, selectedIndex } = store.getState().productReducer
+        if (!selectedIndex) {
+            return store.dispatch(buyProductFailure('No products selected!'))
+        }
+
+        const product = products.find(product => product.id === selectedIndex)
+        const value = store.getState().balanceReducer.value
+        if (value <= 0 || product.price > value) {
+            return store.dispatch(buyProductFailure('Insufficient funds have been inserted'))
+        }
+    }
+    next(action)
+}
+
 const store = createStore(
     reducers,
-    initialState
+    initialState,
+    applyMiddleware(buyMiddleware)
 )
 
 export default store

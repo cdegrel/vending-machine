@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
                 selectedIndex: null
             }
         case BUY_PRODUCT_FAILURE:
-            return { ...state, error: 'une erreur' }
+            return { ...state, error: action.error }
         default:
             return state
     }

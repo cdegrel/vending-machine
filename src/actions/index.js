@@ -1,4 +1,11 @@
-import { BUY_PRODUCT, FETCH_COINS, FETCH_PRODUCTS, INCREMENT_BALANCE, SELECT_PRODUCT } from '../constants/action-types'
+import {
+    BUY_PRODUCT,
+    BUY_PRODUCT_FAILURE,
+    FETCH_COINS,
+    FETCH_PRODUCTS,
+    INCREMENT_BALANCE,
+    SELECT_PRODUCT
+} from '../constants/action-types'
 
 // Product
 export const fetchProducts = () => ({
@@ -12,6 +19,10 @@ export const selectProduct = id => ({
 
 export const buyProduct = () => ({
     type: BUY_PRODUCT
+})
+export const buyProductFailure = error => ({
+    type: BUY_PRODUCT_FAILURE,
+    error
 })
 
 // Coin
