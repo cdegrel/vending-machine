@@ -1,3 +1,11 @@
+:root {
+    --primary: #293e50;
+    --accent: #6a551f;
+    --success: #47a44f;
+    --danger: #cb5427;
+    --black: #282828;
+}
+
 body {
     font-family: sans-serif;
     background: #efefef;
@@ -16,11 +24,32 @@ a {
     padding: 5px 10px;
     color: #fff;
     cursor: pointer;
-    background: #293e50;
+}
+.btn-primary {
+    background: var(--primary);
+}
+.btn-accent {
+    background: var(--accent);
+}
+.btn-success {
+    background: var(--success);
+}
+.btn-danger {
+    background: var(--danger);
 }
 .btn-full {
     width: 100%;
 }
+.btn-round {
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+.btn:disabled {
+    background: #c4c4c4;
+    cursor: default;
+}
+
 .form__field {
     border-radius: 0;
     border-style: solid;
@@ -34,7 +63,7 @@ a {
 }
 
 .header {
-    background: #293e50;
+    background: var(--primary);
     padding: 1.5rem;
     color: #fff;
     display: flex;
@@ -78,17 +107,13 @@ a {
     align-items: center;
 }
 .product-list-item.selected {
-    border: 3px solid #6a551f;
+    border: 3px solid var(--accent);
 }
 .product-list-item__info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-}
-.product-list-item__select:disabled {
-    background: #c4c4c4;
-    cursor: default;
 }
 
 .balance {
@@ -108,25 +133,10 @@ a {
     padding: 1rem;
     margin-bottom: 20px;
 }
-.coin-selector-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background: #6a551f;
-    color: #fff;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.dispense-button {
-    background: #6a551f;
-    margin-bottom: 20px;
-}
 
 .purchase-status {
     height: 20px;
-    background: #282828;
+    background: var(--black);
     color: #fff;
     line-height: 20px;
     padding: 1rem;

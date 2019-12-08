@@ -6,7 +6,7 @@ const Header = () => (
         <Link to="/">
             <h1>Vending Machine</h1>
         </Link>
-        <Link className="btn" to="/admin">Admin</Link>
+        <Link className="btn btn-danger" to="/admin">Admin</Link>
     </header>
 )
 

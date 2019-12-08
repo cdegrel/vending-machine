@@ -11,7 +11,7 @@ const AdminCoinListItem = ({ coin, onReloadStock }) => {
     return (
         <div className="coin-list-item">
             <div className="flex">
-                <div className="coin-selector-button flex">{coin.label}</div>
+                <div className="flex btn btn-accent btn-round">{coin.label}</div>
                 <strong>x</strong>
                 <div>{coin.stock}</div>
                 <strong>=</strong>
@@ -19,7 +19,7 @@ const AdminCoinListItem = ({ coin, onReloadStock }) => {
             </div>
             <form onSubmit={handleSubmit}>
                 <input className="form__field" name="stock" type="number" placeholder="Add quantity"/>
-                <button className="btn" type="submit">Add</button>
+                <button className="btn btn-primary" type="submit">Add</button>
             </form>
         </div>
     )

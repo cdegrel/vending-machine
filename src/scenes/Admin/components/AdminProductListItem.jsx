@@ -17,7 +17,7 @@ const AdminProductListItem = ({ product, onReloadStock }) => {
             </div>
             <form onSubmit={handleSubmit}>
                 <input className="form__field" name="stock" type="number" placeholder="Add stock"/>
-                <button className="btn btn-full" type="submit">Reloading</button>
+                <button className="btn btn-primary btn-full" type="submit">Reloading</button>
             </form>
         </div>
     )
