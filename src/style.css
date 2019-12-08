@@ -1,0 +1,174 @@
+:root {
+    --primary: #293e50;
+    --accent: #6a551f;
+    --success: #47a44f;
+    --danger: #cb5427;
+    --black: #282828;
+}
+
+body {
+    font-family: sans-serif;
+    background: #efefef;
+    margin: 0;
+}
+h1 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    border: none;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-primary {
+    background: var(--primary);
+}
+.btn-accent {
+    background: var(--accent);
+}
+.btn-success {
+    background: var(--success);
+}
+.btn-danger {
+    background: var(--danger);
+}
+.btn-full {
+    width: 100%;
+}
+.btn:disabled {
+    background: #c4c4c4;
+    cursor: default;
+}
+
+.form__field {
+    border-radius: 0;
+    border-style: solid;
+    padding: 10px 5px;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    background: var(--primary);
+    padding: 1rem;
+    color: #fff;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coin {
+    background: var(--accent);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+}
+
+.app__main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.machine__control {
+    display: flex;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.product-list-item {
+    background: #fff;
+    padding: 1rem;
+    height: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-list-item.selected {
+    border: 3px solid var(--accent);
+}
+.product-list-item__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.balance {
+    height: 20px;
+    background: #282828;
+    color: #fff;
+    line-height: 20px;
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.coin-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.purchase-status {
+    height: 20px;
+    background: var(--black);
+    color: #fff;
+    line-height: 20px;
+    padding: 1rem;
+}
+
+.product-purchased-list__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.coin-list-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.coin-list-item__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+
+@media screen and (min-width: 480px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .product-list {
+        justify-content: inherit;
+    }
+}
