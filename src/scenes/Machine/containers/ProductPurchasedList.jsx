@@ -3,16 +3,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import ProductPurchasedListItem from '../components/ProductPurchasedListItem'
 
-const ProductPurchasedList = ({ products }) => {
+const ProductPurchasedList = ({ purchases }) => {
     return (
         <div className="product-purchased-list">
             <header>
-                <h2>Purchased Product</h2>
+                <h2>Purchased Products</h2>
                 <hr />
             </header>
             <div className="product-purchased-list__list">
-                {products.map((product, index) => (
-                    <ProductPurchasedListItem key={index} product={product} onSelectProduct={null} />
+                {purchases.map((purchase, index) => (
+                    <ProductPurchasedListItem key={index} purchase={purchase} />
                 ))}
             </div>
         </div>
@@ -20,7 +20,12 @@ const ProductPurchasedList = ({ products }) => {
 }
 
 const mapStateToProps = state => ({
-    products: state.productPurchasedReducer.products.map(id => state.productReducer.products.find(product => product.id === id))
+    purchases: state.productPurchasedReducer.purchases.map(purchase => {
+        return {
+            ...purchase,
+            product: state.productReducer.products.find(product => product.id === purchase.product),
+        }
+    })
 })
 
 export default connect(mapStateToProps)(ProductPurchasedList)

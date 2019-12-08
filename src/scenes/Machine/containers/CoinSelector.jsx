@@ -9,7 +9,7 @@ const CoinSelector = ({ coins, handleIncrementBalance, handleReloadCoinStock }) 
     return (
         <div className="coin-selector">
             {coins.map(coin => (
-                <Coin coin={coin} onClick={() => {
+                <Coin key={coin.id} coin={coin} onClick={() => {
                     handleIncrementBalance(coin.value)
                     handleReloadCoinStock(coin.id)
                 }} />

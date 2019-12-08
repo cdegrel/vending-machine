@@ -29,10 +29,20 @@ const buyMiddleware = store => next => action => {
             return store.dispatch(buyProductFailure('Insufficient funds!'))
         }
 
-        const refund = coinRefund(store.getState().coinReducer.coins, value - price)
-        refund.forEach((value, key) => store.dispatch(reloadCoinStock(key, -value)))
+        const coins = store.getState().coinReducer.coins
+        const refund = coinRefund(coins, value - price)
+
+        let coinsRefunded = []
+        refund.forEach((value, key) => {
+            store.dispatch(reloadCoinStock(key, -value))
+            coinsRefunded.push({
+                ...coins.find(coin => coin.id === key),
+                stock: value
+            })
+        })
 
         store.dispatch(decrementBalance(value))
+        action.coins = coinsRefunded
     }
     next(action)
 }
