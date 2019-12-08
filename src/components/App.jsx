@@ -1,21 +1,19 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-import ProductList from '../containers/ProductList'
-import ControllerPanel from '../containers/ControllerPanel'
-import ProductPurchasedList from '../containers/ProductPurchasedList'
+import Header from './Header'
+import Machine from './Machine'
+import Admin from './Admin'
 
 const App = () => {
     return (
         <div className="app">
-            <header className="app__header">
-                <h1>Vending Machine</h1>
-            </header>
+            <Header />
             <main className="app__main">
-                <div className="vending-machine">
-                    <ProductList />
-                    <ControllerPanel />
-                </div>
-                <ProductPurchasedList />
+                <Switch>
+                    <Route exact path="/" component={Machine}/>
+                    <Route path="/admin" component={Admin}/>
+                </Switch>
             </main>
         </div>
     )

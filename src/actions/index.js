@@ -3,7 +3,7 @@ import {
     BUY_PRODUCT_FAILURE, DECREMENT_BALANCE,
     FETCH_COINS,
     FETCH_PRODUCTS,
-    INCREMENT_BALANCE,
+    INCREMENT_BALANCE, RELOAD_COIN_STOCK, RELOAD_PRODUCT_STOCK,
     SELECT_PRODUCT
 } from '../constants/action-types'
 
@@ -17,9 +17,21 @@ export const selectProduct = id => ({
     id
 })
 
+export const reloadProductStock = (id, stock) => ({
+    type: RELOAD_PRODUCT_STOCK,
+    id,
+    stock
+})
+
 // Coin
 export const fetchCoins = () => ({
     type: FETCH_COINS
+})
+
+export const reloadCoinStock = (id, stock) => ({
+    type: RELOAD_COIN_STOCK,
+    id,
+    stock
 })
 
 // Balance
