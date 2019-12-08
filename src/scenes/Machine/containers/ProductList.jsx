@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import ProductListItem from '../components/ProductListItem'
-import { selectProduct } from '../actions'
+import { selectProduct } from '../../../actions'
 
 const ProductList = ({ products, selectedIndex, handleSelectProduct }) => {
     return (

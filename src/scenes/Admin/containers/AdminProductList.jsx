@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import AdminProductListItem from '../components/AdminProductListItem'
-import { reloadProductStock } from '../actions'
+import { reloadProductStock } from '../../../actions'
 
 const AdminProductList = ({ products, handleReloadStock }) => {
     const total = products.reduce((acc, curr) => acc + curr.stock, 0)

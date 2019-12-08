@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Header from './Header'
-import Machine from './Machine'
-import Admin from './Admin'
+import Header from './components/Header'
+import Machine from '../Machine/Machine'
+import Admin from '../Admin/Admin'
 
 const App = () => {
     return (

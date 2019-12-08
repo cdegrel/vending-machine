@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import CoinSelectorButton from '../components/CoinSelectorButton'
-import { incrementBalance, reloadCoinStock } from '../actions'
+import { incrementBalance, reloadCoinStock } from '../../../actions'
 
 const CoinSelector = ({ coins, handleIncrementBalance, handleReloadCoinStock }) => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import AdminCoinListItem from '../components/AdminCoinListItem'
-import { reloadCoinStock } from '../actions'
+import { reloadCoinStock } from '../../../actions'
 
 const AdminCoinList = ({ coins, handleReloadStock }) => {
     const total = coins.reduce((acc, curr) => acc + curr.stock * curr.value, 0)

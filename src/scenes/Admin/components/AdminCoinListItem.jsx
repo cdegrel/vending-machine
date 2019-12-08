@@ -11,7 +11,7 @@ const AdminCoinListItem = ({ coin, onReloadStock }) => {
     return (
         <div className="coin-list-item">
             <div className="flex">
-                <div className="coin-selector-button">{coin.label}</div>
+                <div className="coin-selector-button flex">{coin.label}</div>
                 <strong>x</strong>
                 <div>{coin.stock}</div>
                 <strong>=</strong>
