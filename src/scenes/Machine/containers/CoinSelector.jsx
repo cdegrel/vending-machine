@@ -2,14 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import CoinSelectorButton from '../components/CoinSelectorButton'
 import { incrementBalance, reloadCoinStock } from '../../../actions'
+import Coin from '../../../components/Coin'
 
 const CoinSelector = ({ coins, handleIncrementBalance, handleReloadCoinStock }) => {
     return (
         <div className="coin-selector">
             {coins.map(coin => (
-                <CoinSelectorButton key={coin.id} coin={coin} onIncrementBalance={handleIncrementBalance} onReloadCoinStock={handleReloadCoinStock} />
+                <Coin coin={coin} onClick={() => {
+                    handleIncrementBalance(coin.value)
+                    handleReloadCoinStock(coin.id)
+                }} />
             ))}
         </div>
     )
@@ -26,7 +29,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     handleIncrementBalance: value => dispatch(incrementBalance(value)),
-    handleReloadCoinStock: (id, stock) => dispatch(reloadCoinStock(id, stock))
+    handleReloadCoinStock: id => dispatch(reloadCoinStock(id, 1))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinSelector)

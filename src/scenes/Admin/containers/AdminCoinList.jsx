@@ -9,10 +9,10 @@ const AdminCoinList = ({ coins, handleReloadStock }) => {
     return (
         <div className="product">
             <header>
-                <h2>Coins (£{total})</h2>
+                <h2>Coins (£{total.toFixed(2)})</h2>
                 <hr/>
             </header>
-            <div className="flex">
+            <div className="coin-list">
                 {coins.map(coin => (
                     <AdminCoinListItem key={coin.id} coin={coin} onReloadStock={handleReloadStock} />
                 ))}
