@@ -8,6 +8,7 @@ export const BUY_PRODUCT_FAILURE = "BUY_PRODUCT_FAILURE"
 
 // Coin
 export const FETCH_COINS = "FETCH_COINS"
+export const RELOAD_COIN_STOCK = "RELOAD_COIN_STOCK"
 
 // Balance
 export const INCREMENT_BALANCE = "INCREMENT_BALANCE"
