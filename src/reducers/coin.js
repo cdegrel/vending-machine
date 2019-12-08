@@ -10,7 +10,6 @@ export default (state = initialState, action) => {
         case FETCH_COINS:
             return { ...state, coins: COINS }
         case RELOAD_COIN_STOCK:
-            console.log(action)
             return { ...state, coins: state.coins.map(coin =>
                 coin.id === action.id
                 ? { ...coin, stock: coin.stock + action.stock }

@@ -1,7 +1,18 @@
 import { applyMiddleware, createStore } from 'redux'
 import reducers from '../reducers'
 import { BUY_PRODUCT } from '../constants/action-types'
-import { buyProductFailure, decrementBalance } from '../actions'
+import { buyProductFailure, decrementBalance, reloadCoinStock } from '../actions'
+
+function coinRefund(coins, amount) {
+    let refund = new Map()
+    for (let coin of coins.slice().filter(coin => coin.stock > 0).reverse()) {
+        while (Number(amount.toFixed(2)) >= coin.value) {
+            amount -= coin.value
+            refund.set(coin.id, refund.has(coin.id) ? refund.get(coin.id) + 1 : 1)
+        }
+    }
+    return refund
+}
 
 const initialState = {}
 
@@ -18,7 +29,10 @@ const buyMiddleware = store => next => action => {
             return store.dispatch(buyProductFailure('Insufficient funds!'))
         }
 
-        store.dispatch(decrementBalance(value - (value - price)))
+        const refund = coinRefund(store.getState().coinReducer.coins, value - price)
+        refund.forEach((value, key) => store.dispatch(reloadCoinStock(key, -value)))
+
+        store.dispatch(decrementBalance(value))
     }
     next(action)
 }
