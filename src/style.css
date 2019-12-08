@@ -26,6 +26,11 @@ a {
     border-style: solid;
     padding: 10px 5px;
 }
+.flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 .header {
     background: #293e50;
@@ -129,4 +134,11 @@ a {
 .product-purchased-list__list {
     display: flex;
     flex-wrap: wrap;
+}
+
+.coin-list-item {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
